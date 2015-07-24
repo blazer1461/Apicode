@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>{{username}}</title>
 </head>
 <body>
+<form action="/" method="post">
+    <input type="text" name="username" placeholder="Enter a username here">
+    <input type="submit" value="See games now!">
 
 
+</form>
+{% block content %}
+
+{% endblock %}
 
 
 </body>
