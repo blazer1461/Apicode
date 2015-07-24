@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-{{games}}
 
+<table >
+    {% for key, value in games.iteritems() %}
+        <tr>
+            <th> {{key}} </th>
+            <td> {{value}}</td>
+
+        </tr>
+    {% endfor %}
+</table>
 {% endblock %}

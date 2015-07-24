@@ -1,6 +1,7 @@
 __author__ = 'blazer1461'
 import urllib2
 import json
+w= {}
 
 
 def steamid_conversion(username):
@@ -13,6 +14,12 @@ def steamid_conversion(username):
     url_open= urllib2.urlopen(steam_url)
     result= url_open.read();
     steam_params=json.loads(result)
-    return steam_params["response"]
+    dict= steam_params["response"]
+    return dict
 
-
+def converting_ids_to_names():
+    url= "http://api.steampowered.com/ISteamApps/GetAppList/v0001/"
+    url_open=urllib2.urlopen(url)
+    result= url_open.read();
+    steam_names= json.loads(result)
+    return steam_names["applist"]["apps"]["app"]

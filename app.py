@@ -2,6 +2,7 @@ __author__ = 'blazer1461'
 import apicode
 from flask import Flask, render_template, request
 
+
 app= Flask (__name__)
 
 @app.route("/", methods=["POST", "GET"])
@@ -11,8 +12,19 @@ def steam_return():
         return render_template("base.html", username="Steam Search")
     elif request.method == "POST":
         user= request.form["username"]
-        temp= apicode.steamid_conversion(user)
-        return render_template("games.html", username= user, games= temp)
+        dict= apicode.steamid_conversion(user)
+        s= dict["game_count"]
+        game_dict= dict["games"]
+        w= {}
+        for i in range(s):
+            appid= game_dict[i]["appid"]
+            playtime= game_dict[i]["playtime_forever"]
+            w[appid]= playtime
+
+        y=[]
+
+
+        return render_template("games.html", username= user, games= w)
 
 if __name__ == "__main__":
 
