@@ -16,7 +16,6 @@ def steam_return():
         s= dict["game_count"]
         game_dict= dict["games"]
         w= {}
-        name_id= apicode.converting_ids_to_names()
         for i in range(s):
             appid= game_dict[i]["appid"]
             playtime= game_dict[i]["playtime_forever"]
