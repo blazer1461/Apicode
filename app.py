@@ -27,21 +27,21 @@ def steam_return():
     elif request.method == "POST":
         user= request.form["username"]
         dict= apicode.steamid_conversion(user)
-        s= dict["game_count"]
+
         game_dict= dict["games"]
         w= {}
-        for i in range(s):
-            appid= game_dict[i]["appid"]
-            playtime= game_dict[i]["playtime_forever"]
+        name_id= apicode.converting_ids_to_names()
+        for item in game_dict:
+
+            appid= item["appid"]
+            playtime= item["playtime_forever"]
             w[appid]= playtime
         #binary search tree that allows the appids to be converted to game names.
-
-        name_id= apicode.converting_ids_to_names()
-        binary_search_appid(name_id, game_dict["appid"])
+            binary_search_appid(name_id, item["appid"])
 
 
 
-        return render_template("games.html", username= user, games= w)
+    return render_template("games.html", username= user, games= w)
 
 if __name__ == "__main__":
 
