@@ -20,7 +20,7 @@ def steam_return():
             appid= game_dict[i]["appid"]
             playtime= game_dict[i]["playtime_forever"]
             w[appid]= playtime
-        #binary search tree that allows the appids to be converted to game names
+        #binary search tree that allows the appids to be converted to game names.
         '''
         name_id= apicode.converting_ids_to_names()
         length= len(name_id)
