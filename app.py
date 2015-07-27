@@ -2,6 +2,20 @@ __author__ = 'blazer1461'
 import apicode
 from flask import Flask, render_template, request
 
+def binary_search_appid(alist, id):
+    start = 0
+    end = len(alist) - 1
+    while (end > start):
+        mid = (end - start) / 2 + start
+        if alist[mid]['appid'] == id:
+         # found it
+            return alist[mid]['name']
+        if alist[mid]['appid'] > id:
+            end = mid -1
+        else:
+            begin = mid + 1
+    # if we are here (outside the while loop), then we didn't find it
+    return None
 
 app= Flask (__name__)
 
@@ -21,28 +35,12 @@ def steam_return():
             playtime= game_dict[i]["playtime_forever"]
             w[appid]= playtime
         #binary search tree that allows the appids to be converted to game names.
-        '''
+
         name_id= apicode.converting_ids_to_names()
-        length= len(name_id)
-        a= 0
-        c=0
-
-        mid= (length-a)/2+a
-        for i in range(length):
-            while a <= length:
-                mid = (length-a)/2 + a
-                c+=1
-                if name_id[mid]["appid"]== game_dict[i]["appid"]:
-                    name_id["name"]=
-                    w[name_id][""]
+        s= binary_search_appid(name_id, w)
 
 
-        '''
-
-
-
-
-        return render_template("games.html", username= user, games= w)
+        return render_template("games.html", username= user, games= s)
 
 if __name__ == "__main__":
 
