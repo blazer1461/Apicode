@@ -8,7 +8,7 @@ def binary_search_appid(alist, id):
     while (end >= start):
         mid = (end - start) / 2 + start
         if alist[mid]['appid'] == id:
-         # found it
+            # found it
             return alist[mid]['name']
         if alist[mid]['appid'] > id:
             end = mid -1
@@ -27,23 +27,20 @@ def steam_return():
     elif request.method == "POST":
         user= request.form["username"]
         dict= apicode.steamid_conversion(user)
-
         game_dict= dict["games"]
         w= {}
+        gname = {}
         name_id= apicode.converting_ids_to_names()
         for item in game_dict:
-
             appid= item["appid"]
             playtime= item["playtime_forever"]
-            w[appid]= playtime
-        #binary search tree that allows the appids to be converted to game names.
-            binary_search_appid(name_id, item["appid"])
+            w[appid]= playtime / 60
+            gname[appid] = binary_search_appid(name_id, appid)
 
-
-
-    return render_template("games.html", username= user, games= w)
+        return render_template("games.html", username= user, games= w, names=gname)
 
 if __name__ == "__main__":
 
     app.debug= True
     app.run(host= '0.0.0.0', port= 12345)
+

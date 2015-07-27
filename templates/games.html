@@ -1,14 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
 <table >
-    {% for key, value in games.iteritems() %}
         <tr>
-            <th> {{key}} </th>
+            <th>Games Own</th>
+            <th>Hours played</th>
+        </tr>
+    {% for key, value in games.iteritems() %}
+
+        <tr>
+            <th> {{names [key]}} </th>
+
             <td> {{value}}</td>
 
         </tr>
     {% endfor %}
 </table>
+
+
 {% endblock %}
