@@ -23,3 +23,5 @@ def converting_ids_to_names():
     result= url_open.read();
     steam_names= json.loads(result)
     return steam_names["applist"]["apps"]["app"]
+
+#w
