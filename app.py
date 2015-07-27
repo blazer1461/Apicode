@@ -20,6 +20,23 @@ def steam_return():
             appid= game_dict[i]["appid"]
             playtime= game_dict[i]["playtime_forever"]
             w[appid]= playtime
+        '''
+        name_id= apicode.converting_ids_to_names()
+        length= len(name_id)
+        a= 0
+        c=0
+
+        mid= (length-a)/2+a
+        for i in range(length):
+            while a <= length:
+                mid = (length-a)/2 + a
+                c+=1
+                if name_id[mid]["appid"]== game_dict[i]["appid"]:
+                    name_id["name"]=
+                    w[name_id][""]
+
+
+        '''
 
 
 
