@@ -23,7 +23,7 @@ def youtubeSearch(searchItem):
     try:
         x.add_argument("--query", help = "Item to search for", default = searchItem)
         x.add_argument("--numResults", help = "number of results", default = 10)
-    except ArgumentError:
+    except "ArgumentError":
         x.query = searchItem
     y = x.parse_args()
     try:

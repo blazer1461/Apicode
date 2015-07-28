@@ -4,7 +4,7 @@ w= {}
 API_KEY = "2152FCF9797139E2F079D0345F438F72"
 
 def steamid_conversion(username):
-    steam_id_url= "http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=2" + API_KEY + "&vanityurl="+username
+    steam_id_url= "http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=" + API_KEY + "&vanityurl="+username
     url_open= urllib2.urlopen(steam_id_url)
     result= url_open.read();
     steam_id_params=json.loads(result)
