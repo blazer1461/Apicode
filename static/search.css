@@ -1,0 +1,27 @@
+#theHeader 
+{
+	position:absolute;
+	width:300px;
+	height: 85px;
+	background: #F9F2E7;
+	border-style:ridge;
+	border-width:6px;
+	border-color:#40C0CB;
+	left:38.6%;
+	top:25%;
+}
+
+#headerText
+{
+	position:absolute;
+	left:9%;
+	top:-5%;
+	font-size:80px;
+	text-align:center;
+	font-family:'Montserrat', sans-serif; font-weight: 700;
+}
+
+body 
+{
+	background-color:#00A8C6;
+}
