@@ -23,10 +23,12 @@ table, th, td {
 
 <br>
 <br>
+
     <form action="/" method="POST">
         <select name="Select_galaxies">
     {% for i in range (list|length) %}
-            <option value="{{games}}">{{list[i]}}</option>
+            <option value="{{list}}">{{list[i]}}</option>
             {% endfor %}
         </select>
+        </form>
 {% endblock %}

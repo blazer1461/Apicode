@@ -31,16 +31,14 @@ def steam_return():
         game_dict= dict["games"]
         w= {}
         gname = {}
-        gname_list=[]
+
         name_id= apicode.converting_ids_to_names()
         for item in game_dict:
             appid= item["appid"]
             playtime= item["playtime_forever"]
             w[appid]= playtime / 60
             gname[appid] = binary_search_appid(name_id, appid)
-        for items in gname:
-            s= items["appid"]
-            s.append(gname_list)
+        gname_list= gname.values()
 
 
         return render_template("games.html", username= user, games= w, names=gname, list= gname_list)
