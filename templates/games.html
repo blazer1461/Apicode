@@ -14,12 +14,19 @@ table, th, td {
     {% for key, value in games.iteritems() %}
 
         <tr>
-            <th><a href="https://www.youtube.com/results?search_query={{names [key]}}"target="_blank"> {{names [key]}} </a></th>
+            <th><a href="https://www.youtube.com/results?search_query={{names [key]}}"target="_blank"> {{names[key]}} </a></th>
             <td> {{value}}</td>
 
         </tr>
     {% endfor %}
 </table>
 
-
+<br>
+<br>
+    <form action="/" method="POST">
+        <select name="Select_galaxies">
+    {% for i in range (list|length) %}
+            <option value="{{games}}">{{list[i]}}</option>
+            {% endfor %}
+        </select>
 {% endblock %}
