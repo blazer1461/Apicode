@@ -25,7 +25,8 @@ table, th, td {
 <br>
 
     <form action="/" method="POST">
-        <select name="Select_galaxies">
+        <select onchange = "window.location=this.value">
+
     {% for i in range (list|length) %}
             <option value="{{list}}">{{list[i]}}</option>
             {% endfor %}
