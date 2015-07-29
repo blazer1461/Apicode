@@ -9,8 +9,20 @@
 	</div>
 
 	<body>
-	{% for num in blah %}
-	<a href = "/video/{{games[num]}}">{{games[num]}}</a>
+	
+	<form action="/" method="post">
+		<input type="text" name="steamID" value="{{ name }}" placeholder="Enter a username here">
+    <input type="submit" value="See games now!">
+
+	<br>
+
+		<select onchange = "window.location='/video/{{games[num]}}'">
+		{% for num in range (games|length) %}
+
+			<option value="{{games}}">{{games[num]}}</option>
+
 	{% endfor %}
+		</select>
+		</form>
 	</body>
 </html>

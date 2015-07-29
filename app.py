@@ -14,7 +14,7 @@ def main():
         blah = []
         for a in xrange(len(games)):
             blah.append(a)
-        return render_template("search.html")
+        return render_template("search.html", games= games, name= name)
 
 
 @app.route("/videos/<gameName>", methods = ["POST"])
