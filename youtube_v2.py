@@ -11,10 +11,9 @@ def search(query):
                 fixed += "+"
             else:
                 fixed += char
-
-    temp = urllib2.open("https://www.googleapis.com/youtube/v3/search?videoEmbeddable=true&part=id%2Csnippet&q=" + fixed + "&type=video&maxResults=10&key=" + API_KEY)
+    temp = urllib2.urlopen("https://www.googleapis.com/youtube/v3/search?videoEmbeddable=true&part=id%2Csnippet&q=" + fixed + "&type=video&maxResults=10&key=" + API_KEY)
     temp2 = temp.read()
-    temp3 = json.loads(data)
+    temp3 = json.loads(temp2)
     data = temp3["items"]
     link = "https://www.youtube.com/watch?v="
     vids = {}
