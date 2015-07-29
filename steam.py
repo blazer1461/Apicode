@@ -53,5 +53,3 @@ def steam_return(user):
             gname[appid] = binary_search_appid(name_id, appid)
         games= gname.values()
         return games, w, gname
-
-print steam_return("blazer1461")
