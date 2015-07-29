@@ -2,30 +2,23 @@
 <html>
 	<head>
 	<link rel = "stylesheet" type= "text/css" href = "../static/search.css">
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	</head>
 
 	<div id = "theHeader">
-		<font color = "#8FBE00" size = "85" id = "headerText">Paidia</font>
+		<font color = "#8FBE00" size = "85" id = "headerText"><a href = "/" style="text-decoration: none">Paidia</a></font>
 	</div>
 
 	<body>
 	
-	<form action="/" method="post">
-		<input type="text" name="steamID" value="{{ user_name }}" placeholder="Enter a username here">
-    <input type="submit" value="See games now!">
 
 
 </select>
 		</form>
 		<br>
-		<style>
-table, th, td {
-    border: 1px solid black;
-}
-</style>
-<table >
+		<table>
         <tr>
-            <th>Games Own</th>
+            <th>Games Owned</th>
             <th>Hours played</th>
         </tr>
 
@@ -34,7 +27,7 @@ table, th, td {
 
 
         <tr>
-            <th><a href="/video/{{ names[key] }}"> {{names[key]}} </a></th>
+            <td><a href="/video/{{ names[key] }}"> {{names[key]}} </a></td>
             <td> {{value}}</td>
 
         </tr>

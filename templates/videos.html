@@ -11,10 +11,9 @@
 		<font color = "#8FBE00" size = "85" id = "headerText">Paidia</font>
 	</div>
 
-	<div class = "vid">
-		
+	<div id = "videos">
+	{% for x in titles %}
+		<iframe width = "420" height = "315" src = "{{aDict[x]}}"></iframe>
+	{% endfor %}
 	</div>
-
-
-
 </html>

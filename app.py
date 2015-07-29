@@ -1,10 +1,14 @@
 from flask import Flask, render_template, request
 import steam
-import youtube
+import youtube_v2
 
 
 app = Flask(__name__)
 
+
+
+
+    
 @app.route("/", methods=["POST","GET"])
 def main():
     if request.method=="GET":
@@ -22,13 +26,14 @@ def main():
 
 @app.route("/videos/<gameName>", methods = ["POST"])
 def videos():
-
-    '''
+    while gameNamefind("%20") != -1:
+        x = gameName.find("%20")
+        gameName = gameName[:x] + " " + string[x+3:]
     aDict= youtube_v2.search(gameName)
     titles= aDict.keys()
-'''
     return render_template("videos.html")
-    
+
+
 if __name__ == "__main__":
     app.debug=True
     app.run()
