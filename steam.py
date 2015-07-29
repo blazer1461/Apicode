@@ -54,3 +54,4 @@ def steam_return(user):
         games= gname.values()
         return games, w, gname
 
+print steam_return("blazer1461")

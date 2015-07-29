@@ -21,7 +21,10 @@
             <th>Games Owned</th>
             <th>Hours played</th>
         </tr>
-    {% for key, value in games.iteritems() %}
+
+    {% for key, value in list_of_games %}
+
+
 
         <tr>
             <td><a href="/video/{{ names[key] }}"> {{names[key]}} </a></td>
@@ -30,6 +33,5 @@
         </tr>
     {% endfor %}
 </table>
-
 	</body>
 </html>
