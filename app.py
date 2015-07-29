@@ -22,8 +22,7 @@ def main():
         for a in xrange(len(games)):
             blah.append(a)
 
-        return render_template("search.html", list_of_games=sorted(games.iteritems(), key=lambda s : s[1]), user_name= name, games= w, names=gname)
-
+        return render_template("search.html", list_of_games=sorted(w.iteritems(), key=(lambda s : s[1]), reverse=True), user_name= name, games= w, names=gname)
 
 @app.route("/videos/<gameName>", methods = ["POST"])
 def videos():
