@@ -14,11 +14,6 @@ def main():
     if request.method=="GET":
         return render_template("basic.html")
     elif request.method=="POST":
-        (games , w ,gname) = steam.steam_return(name)
-        blah = []
-        for a in xrange(len(games)):
-            blah.append(a)
-        return render_template("search.html", list_of_games=sorted(w.iteritems(), key=(lambda s : s[1]), reverse=True), user_name= name, games= w, names=gname)
         try:
             name = request.form["steamID"]
             (games , w ,gname) = steam.steam_return(name)
