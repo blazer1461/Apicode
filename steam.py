@@ -54,10 +54,11 @@ def steam_return(user):
             gname[appid] = binary_search_appid(name_id, appid)
         games= gname.values()
         return games, w, gname
-
+    
 def m2h (minutes):
     temp = minutes % 60
     temp2 = minutes // 60
     temp *= float(1/60)
     return temp2 + temp
     
+
