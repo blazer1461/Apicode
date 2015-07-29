@@ -9,7 +9,7 @@ def steamid_conversion(username):
     result= url_open.read();
     steam_id_params=json.loads(result)
     t = steam_id_params["response"]["steamid"]
-    steam_url= "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=" + API_KEY + "&steamid="+t+" &format=json"
+    steam_url= "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=" + API_KEY + "&steamid="+t+" &format=json&include_played_free_games=1"
     url_open= urllib2.urlopen(steam_url)
     result= url_open.read();
     steam_params=json.loads(result)
@@ -47,9 +47,9 @@ def steam_return(user):
         name_id = getAppList()
         for item in game_dict:
             appid= item["appid"]
-
             playtime= item["playtime_forever"]
-            x = m2h (playtime)
+            x = float(playtime) / 60
+            x = round(x, 1)
             w[appid]= x
             gname[appid] = binary_search_appid(name_id, appid)
         games= gname.values()

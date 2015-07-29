@@ -37,7 +37,7 @@ body
 iframe 
 {
 	position:relative;
-	margin: 0 auto;
+	float:left;
 	top:240px;
 	border-radius:8px;
 	border-style:ridge;

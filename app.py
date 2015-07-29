@@ -5,9 +5,6 @@ import youtube_v2
 
 app = Flask(__name__)
 
-
-
-
     
 @app.route("/", methods=["POST","GET"])
 def main():
