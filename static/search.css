@@ -26,3 +26,50 @@ body
 	background-color:#00A8C6;
 }
 
+table
+{
+	position:relative;
+	margin:0 auto;
+	top:175px;
+	border-collapse:collapse;
+	border-style:solid;
+	border-width:5px; 
+	border-color:#40C0CB;
+	background-color:#F9F2E7;
+}
+
+a
+{
+	color:#8FBE00;
+}
+
+a:hover
+{
+	color:#40C0CB;
+}
+
+td
+{
+	border-style:solid;
+	border-width:4px; 
+	border-color:#40C0CB;
+	border-collapse:collapse;	
+	color:#8FBE00;
+	font-family:'Montserrat', sans-serif;
+	text-align:center;
+	font-size:20px;
+	padding: 10px 10px 10px 10px
+}
+
+th
+{
+	border-style:solid;
+	border-width:4px; 
+	border-color:#40C0CB;
+	border-collapse:collapse;	
+	font-family:'Montserrat', sans-serif;
+	font-weight:bold;
+	font-size:30px;
+	color:#8FBE00;
+	padding: 10px 5px 10px 5px
+}

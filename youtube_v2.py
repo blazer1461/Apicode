@@ -1,7 +1,7 @@
 import urllib2
 import json
 
-API_KEY + "AIzaSyBtPQJ1yx9sAqRVSCMQdcPB6BqFUVhERIg"
+API_KEY = "AIzaSyBtPQJ1yx9sAqRVSCMQdcPB6BqFUVhERIg"
 
 def search(query):
     fixed = ""
@@ -19,9 +19,7 @@ def search(query):
     link = "https://www.youtube.com/watch?v="
     vids = {}
     for x in data:
-        
-        
-        
-    
-    
-    
+        xlink = link + x["id"]["videoId"]
+        name = x["snippet"]["title"]
+        vids[name] = xlink
+    return vids
