@@ -32,3 +32,13 @@ body
 	position:relative;
 	margin: 0 auto;
 }
+
+.vid 
+{
+	width:800px;
+	height:450px;
+	border-radius:8px;
+	border-style:ridge;
+	border-width:6px;
+	border-color:#40C0CB;
+}
