@@ -42,13 +42,15 @@ def steam_return(user):
         dict = steamid_conversion(user)
         game_dict= dict["games"]
         w= {}
-        games = []
+
+        gname={}
         name_id = getAppList()
         for item in game_dict:
             appid= item["appid"]
-            gameName = binary_search_appid(name_id, appid)
-            #playtime= item["playtime_forever"]
-            #w[gameName]= playtime / 60
-            games.append(gameName)
-        return games
+
+            playtime= item["playtime_forever"]
+            w[appid]= playtime / 60
+            gname[appid] = binary_search_appid(name_id, appid)
+        games= gname.values()
+        return games, w, gname
 

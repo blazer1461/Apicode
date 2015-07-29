@@ -10,15 +10,17 @@ def main():
         return render_template("basic.html")
     elif request.method=="POST":
         name = request.form["steamID"]
-        games = steam.steam_return(name)
+        (games , w ,gname) = steam.steam_return(name)
         blah = []
         for a in xrange(len(games)):
             blah.append(a)
-        return render_template("search.html", games= games, name= name)
+        return render_template("search.html", list_of_games= games, user_name= name, games= w, names=gname)
 
 
 @app.route("/videos/<gameName>", methods = ["POST"])
 def videos():
+    aDict= youtube_v2.search(gameName)
+    titles= aDict.keys()
 
     return render_template("videos.html")
     

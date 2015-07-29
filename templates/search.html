@@ -11,18 +11,32 @@
 	<body>
 	
 	<form action="/" method="post">
-		<input type="text" name="steamID" value="{{ name }}" placeholder="Enter a username here">
+		<input type="text" name="steamID" value="{{ user_name }}" placeholder="Enter a username here">
     <input type="submit" value="See games now!">
 
-	<br>
 
-		<select onchange = "window.location='/video/{{games[num]}}'">
-		{% for num in range (games|length) %}
-
-			<option value="{{games}}">{{games[num]}}</option>
-
-	{% endfor %}
-		</select>
+</select>
 		</form>
+		<br>
+		<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+<table >
+        <tr>
+            <th>Games Own</th>
+            <th>Hours played</th>
+        </tr>
+    {% for key, value in games.iteritems() %}
+
+        <tr>
+            <th><a href="/video/{{ names[key] }}"> {{names[key]}} </a></th>
+            <td> {{value}}</td>
+
+        </tr>
+    {% endfor %}
+</table>
+
 	</body>
 </html>
