@@ -37,10 +37,8 @@ body
 iframe 
 {
 	position:relative;
-	margin:0 auto;
+	margin: 0 auto;
 	top:240px;
-	width:800px;
-	height:450px;
 	border-radius:8px;
 	border-style:ridge;
 	border-width:6px;

@@ -35,7 +35,7 @@ def videos(gameName):
     linx = []
     for y in titles:
         linx.append(aDict[y])
-    return render_template("videos.html", aDict = aDict, blah = blah, y = y)
+    return render_template("videos.html", blah = blah, linx = linx)
 
 
 if __name__ == "__main__":
