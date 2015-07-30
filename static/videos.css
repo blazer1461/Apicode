@@ -31,13 +31,12 @@ body
 {
 	position:relative;
 	margin: 0 auto;
-	text-align: center;
-	vertical-align: middle;
 }
 
 iframe 
 {
 	position:relative;
+	float:left;
 	top:240px;
 	border-radius:8px;
 	border-style:ridge;
@@ -58,10 +57,9 @@ a:hover
 
 .title
 {
-	position: relative;
+	position;relative;
 	top:240px;
 	margin: 0 auto;
-	color:#660099;
+	color:#8FBE00;
 	font-size:25px;
-	text-align: center;
 }
