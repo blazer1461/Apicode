@@ -13,8 +13,8 @@ def main():
     elif request.method=="POST":
         try:
             name = request.form["steamID"]
-            (games , w) = steam.steam_return(name)
-            return render_template("search.html", list_of_games=sorted(w.iteritems(), key=(lambda s : s[1]), reverse=True), names=games)
+            w = steam.steam_return(name)
+            return render_template("search.html", list_of_games=sorted(w.iteritems(), key=(lambda s : s[1]), reverse=True))
         except:
             return render_template("basic.html", Error= "NOT FOUND")
 

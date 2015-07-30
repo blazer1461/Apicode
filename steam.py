@@ -28,8 +28,7 @@ def steam_return(user):
             x = float(playtime) / 60
             x = round(x, 1)
             w[name]= x
-        games= w.keys()
-        return games, w
+        return w
 
     
 
