@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route("/", methods=["POST","GET"])
 def main():
     if request.method=="GET":
-        return render_template("basic.html")
+        return render_template("basic.html", Error = " ")
     elif request.method=="POST":
         try:
             name = request.form["steamID"]

@@ -48,7 +48,7 @@ iframe
 
 a
 {
-	text-decoration: none;
+	text-decoration:none;
 	color:#8FBE00;
 }
 
@@ -59,10 +59,14 @@ a:hover
 
 .title
 {
+	text-shadow: -1px -1px 0 #40C0CB,
+    1px -1px 0 #40C0CB,
+    -1px 1px 0 #40C0CB,
+    1px 1px 0 #40C0CB;
 	position: relative;
 	top:240px;
 	margin: 0 auto;
-	color:#660099;
-	font-size:25px;
+	color:#8FBE00;
+	font-size:40px;
 	text-align: center;
 }
