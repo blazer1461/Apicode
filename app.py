@@ -9,14 +9,14 @@ app = Flask(__name__)
 @app.route("/", methods=["POST","GET"])
 def main():
     if request.method=="GET":
-        return render_template("basic.html", Error = " ")
+        return render_template("basic.html", Error = "Enter steam username ")
     elif request.method=="POST":
         try:
             name = request.form["steamID"]
             (games , w) = steam.steam_return(name)
             return render_template("search.html", list_of_games=sorted(w.iteritems(), key=(lambda s : s[1]), reverse=True), names=games)
         except:
-            return render_template("basic.html", Error= "You have typed in an error")
+            return render_template("basic.html", Error= "NOT FOUND")
 
 @app.route("/video/<gameName>")
 def videos(gameName):
