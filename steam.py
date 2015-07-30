@@ -19,7 +19,6 @@ def steamid_conversion(username):
 def steam_return(user):
         dict = steamid_conversion(user)
         game_dict= dict["games"]
-        print game_dict
         w= {}
         x = 0.0
         gname={}
