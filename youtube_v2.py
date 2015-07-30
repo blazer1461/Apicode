@@ -25,6 +25,4 @@ def search(query):
         name = x["snippet"]["title"]
         links.append(xlink)
         titles.append(name)
-    print links
-    print titles
     return links, titles
