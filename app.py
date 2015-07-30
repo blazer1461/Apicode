@@ -26,13 +26,11 @@ def videos(gameName):
     while gameName.find("%20") != -1:
         x = gameName.find("%20")
         gameName = gameName[:x] + " " + string[x+3:]
-    aDict= youtube_v2.search(gameName)
-    titles= aDict.keys()
+    result = youtube_v2.search(gameName)
     blah = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    linx = []
-    for y in titles:
-        linx.append(aDict[y])
-    return render_template("videos.html", blah = blah, linx = linx)
+    linx = result[0]
+    titles = result[1]
+    return render_template("videos.html", blah = blah, linx = linx, titles = titles)
 
 
 if __name__ == "__main__":

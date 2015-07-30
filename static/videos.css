@@ -44,3 +44,12 @@ iframe
 	border-width:6px;
 	border-color:#40C0CB;
 }
+
+.title
+{
+	position;relative;
+	top:240px;
+	margin: 0 auto;
+	color:#8FBE00;
+	font-size:25px;
+}

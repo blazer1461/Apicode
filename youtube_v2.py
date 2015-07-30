@@ -15,10 +15,12 @@ def search(query):
     temp2 = temp.read()
     temp3 = json.loads(temp2)
     data = temp3["items"]
-    link = "https://www.youtube.com/watch?v="
-    vids = {}
+    link = "https://www.youtube.com/embed/"
+    titles = []
+    links = []
     for x in data:
         xlink = link + x["id"]["videoId"]
         name = x["snippet"]["title"]
-        vids[name] = xlink
-    return vids
+        links.append(xlink)
+        titles.append(name)
+    return links, titles

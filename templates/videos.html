@@ -13,6 +13,10 @@
 
 	<div id = "videos">
 	{% for x in blah %}
+			<div class = "title">
+			{{titles[x]}}
+			</div>
+			<br>
 			<iframe width = "800" height = "450" src = {{linx[x]}}></iframe>
 			<br>
 	{% endfor %}
