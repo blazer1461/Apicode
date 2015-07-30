@@ -1,16 +1,15 @@
 #theHeader 
 {
 	color:#8FBE00;
-	position:relative;
+	position:absolute;
 	width:300px;
 	height: 85px;
 	background: #F9F2E7;
-	border-radius:8px;
 	border-style:ridge;
 	border-width:6px;
 	border-color:#40C0CB;
-	margin:0 auto;
-	top:100px;
+	left:38.6%;
+	top:10%;
 }
 
 #headerText
@@ -43,6 +42,17 @@ iframe
 	border-style:ridge;
 	border-width:6px;
 	border-color:#40C0CB;
+}
+
+a
+{
+	text-decoration: none;
+	color:#8FBE00;
+}
+
+a:hover
+{
+	color:#40C0CB;
 }
 
 .title
