@@ -11,6 +11,8 @@ def search(query):
                 fixed += "+"
             else:
                 fixed += char
+    else:
+        fixed = query
     temp = urllib2.urlopen("https://www.googleapis.com/youtube/v3/search?videoEmbeddable=true&part=id%2Csnippet&q=" + fixed + "&type=video&maxResults=10&key=" + API_KEY)
     temp2 = temp.read()
     temp3 = json.loads(temp2)
@@ -23,4 +25,6 @@ def search(query):
         name = x["snippet"]["title"]
         links.append(xlink)
         titles.append(name)
+    print links
+    print titles
     return links, titles

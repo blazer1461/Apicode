@@ -23,9 +23,10 @@ def main():
 
 @app.route("/video/<gameName>")
 def videos(gameName):
-    while gameName.find("%20") != -1:
-        x = gameName.find("%20")
-        gameName = gameName[:x] + " " + string[x+3:]
+    if gameName.find("%20") != -1:
+        while gameName.find("%20") != -1:
+            x = gameName.find("%20")
+            gameName = gameName[:x] + " " + string[x+3:]
     result = youtube_v2.search(gameName)
     blah = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     linx = result[0]

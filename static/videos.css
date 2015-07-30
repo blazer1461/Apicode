@@ -38,6 +38,7 @@ body
 iframe 
 {
 	position:relative;
+	margin: 0 auto;
 	top:240px;
 	border-radius:8px;
 	border-style:ridge;
