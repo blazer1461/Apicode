@@ -14,7 +14,7 @@ def main():
         try:
             name = request.form["steamID"]
             w = steam.steam_return(name)
-            return render_template("search.html", list_of_games=sorted(w.iteritems(), key=(lambda s : s[1]), reverse=True))
+            return render_template("search.html", list_of_games=sorted(w.items(), key=(lambda s : s[1]), reverse=True))
         except:
             return render_template("basic.html", Error= "NOT FOUND")
 
