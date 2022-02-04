@@ -1,18 +1,17 @@
-import urllib2
+from urllib.request import urlopen
 import json
 w= {}
-API_KEY = "2152FCF9797139E2F079D0345F438F72"
+API_KEY = "6FC10D5A75E6EC09D63D83EED8AD418E"
 
 def steamid_conversion(username):
     steam_id_url= "http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=" + API_KEY + "&vanityurl="+username
-    url_open= urllib2.urlopen(steam_id_url)
-    result= url_open.read();
+    result= urlopen(steam_id_url).read()
     steam_id_params=json.loads(result)
     steamID = steam_id_params["response"]["steamid"]
     steam_url = "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=" + API_KEY + "&steamid=" + steamID + "&format=json&include_played_free_games=1&include_appinfo=1"
-    url_open= urllib2.urlopen(steam_url)
-    result= url_open.read();
-    steam_params=json.loads(result)
+    print("got here too")
+    url_open= urlopen(steam_url).read()
+    steam_params=json.loads(url_open)
     dict= steam_params["response"]
     return dict
 
