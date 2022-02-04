@@ -1,7 +1,7 @@
-import urllib2
+from urllib.request import urlopen
 import json
 
-API_KEY = "AIzaSyBtPQJ1yx9sAqRVSCMQdcPB6BqFUVhERIg"
+API_KEY = "AIzaSyAprJ9wbG55wXTppfvxx5uchCk5ORMYNJE"
 
 def search(query):
     fixed = ""
@@ -13,8 +13,9 @@ def search(query):
                 fixed += char
     else:
         fixed = query
-    temp = urllib2.urlopen("https://www.googleapis.com/youtube/v3/search?videoEmbeddable=true&part=id%2Csnippet&q=" + fixed + "&type=video&maxResults=10&key=" + API_KEY)
-    temp2 = temp.read()
+
+    print(fixed)
+    temp2 = urlopen("https://www.googleapis.com/youtube/v3/search?videoEmbeddable=true&part=id%2Csnippet&q=" + fixed + "&type=video&maxResults=10&key=" + API_KEY).read()
     temp3 = json.loads(temp2)
     data = temp3["items"]
     link = "https://www.youtube.com/embed/"
